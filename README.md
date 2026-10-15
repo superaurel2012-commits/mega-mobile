@@ -21,7 +21,7 @@ Beispielauftrag ohne Upload:
 
 > Erstellt gemeinsam die Datei Ergebnis.md mit dem Text „Guten Tag“. Mega A soll die Datei mit write erstellen. Mega B soll sie mit read öffnen und den Inhalt prüfen. Tauscht dazu Nachrichten aus. Reicht danach beide mit submit=true ein.
 
-Erfolgskriterium: Ergebnis.md existiert, enthält „Guten Tag“, und Mega B hat ein echtes read-Ergebnis gesehen. Standardmäßig bestätigt der Nutzer das Ergebnis. Alternativ vorab **Feste Dateiprüfungen** auswählen und beispielsweise eintragen:
+Erfolgskriterium: Ergebnis.md existiert, enthält „Guten Tag“, und Mega B hat ein echtes read-Ergebnis gesehen. Über **Ergebnis prüfen** kann der Nutzer jederzeit selbst zur Prüfung übergeben; dafür wird die laufende Modellberechnung beendet. Standardmäßig bestätigt der Nutzer das Ergebnis. Alternativ vorab **Feste Dateiprüfungen** auswählen und beispielsweise eintragen:
 
 ```json
 [{"kind":"contains","path":"Ergebnis.md","expected":"Guten Tag"}]
@@ -80,6 +80,8 @@ Eigener App-Code MIT, Modelle und Bibliotheken nach ihren jeweiligen Lizenzen. V
 - [Offizielles SmolVLM-WebGPU-Beispiel](https://github.com/huggingface/transformers.js-examples/tree/main/smolvlm-webgpu)
 - [SmolVLM-Modell und Apache-2.0-Lizenz](https://huggingface.co/HuggingFaceTB/SmolVLM-256M-Instruct)
 - [Qwen2.5-1.5B](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)
+
+Das kleine Textmodell kann Formatfehler, Wiederholungen und unzuverlässige Werkzeugplanung zeigen. Konkrete kurze Aufträge helfen, garantieren aber keinen Erfolg. Mehrere ausgegebene Schritte werden auf genau den ersten begrenzt und sichtbar gekennzeichnet; der nächste Agent hat einen eigenen Aufruf.
 
 Die mobile App ergänzt die bestehende Windows-Ausgabe. Sie übernimmt weder deren Ollama-Modell noch alte SQLite-Aufgaben automatisch und unterstützt keine Container-Codeausführung auf iOS.
 
